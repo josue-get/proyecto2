@@ -20,6 +20,29 @@ void gotoxy(int x, int y) {
     SetConsoleCursorPosition(hcon, dwPos);
 }
 
+class cosomacho {
+     
+private:
+
+    string nombre1;
+    string nombre2;
+    string apellido1;
+    string apellido2;
+    int edad;
+    int id;
+
+public:
+
+
+
+
+};
+
+
+
+
+
+
 void crearmarco() {
 
 	SetConsoleOutputCP(CP_UTF8);
@@ -53,36 +76,7 @@ void crearmarco() {
         cout << "╝";
     }
 
-	/*for (int i = 0; i < 79; i = i + 79) {
-
-		if (i == 0) {
-
-
-			gotoxy(i, 0); cout << "╔";
-			gotoxy(i, 24);  cout << "╚";
-
-		}
-		else {
-
-			gotoxy(i, 0); cout << "╗";
-			gotoxy(i, 24);  cout << "╝";
-		}
-
-	}
-	for (int i = 1; i < 79; i++) {
-
-		gotoxy(i, 0); cout << "­═­";
-		gotoxy(i, 24); cout << "═";
-
-	}
-	for (int i = 1; i < 24; i++) {
-
-		gotoxy(79, i); cout << "║";
-		gotoxy(0, i); cout << "║";
-
-	}
-	*/
-
+	
 
 
 void leer() {
@@ -93,18 +87,23 @@ void leer() {
     
 
         string registro;
-
+        string idh, nombre1h, nombre2h, apellido1h, apellido2h;
 
         getline(archivo, registro);
 
         while (getline(archivo, registro)) {
 
-           // cout << registro << endl;
+            stringstream token(registro);
 
+            getline(token, idh, ';');
+            getline(token, nombre1h, ';');
+            getline(token, nombre2h, ';');
+            getline(token, apellido1h, ';');
+            getline(token, apellido2h , ';');
 
-
-
-
+            
+            cout << nombre1h << endl;
+            cout << idh << endl;
 
 
 
@@ -128,7 +127,19 @@ void leer() {
 
 int main()
 {
-	crearmarco();
+
+
+
+	
     
+    leer();
+
+
+
+
+
+
+
 
 }
+
